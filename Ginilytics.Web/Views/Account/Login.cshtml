@@ -1,0 +1,76 @@
+﻿@model Ginilytics.Model.DataModel.UserLoginDto
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="~/images/favicon.ico.png" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <title>Ginilytics Support - Login</title>
+</head>
+
+<body>
+    <div class="login-frame">
+        <div class="card bg-white p-5">
+            <div class="row align-items-center">
+                <div class="col-6 border-end">
+                    <h1 class="mb-30">Welcome back,<span class="d-block">Please sign in to your account</span></h1>
+                    @Html.ValidationSummary()
+                    <form asp-action="Login" asp-controller="Account" method="post">
+                        <div class="w-300">
+                            <div class="mb-3 position-relative">
+                                <div class="input-icon position-absolute">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                @Html.TextBoxFor(m => m.UserName, new { placeholder = "Enter Your User Name", @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.UserName)
+                            </div>
+                            <div class="mb-30 position-relative">
+                                <div class="input-icon position-absolute">
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                                @Html.PasswordFor(m => m.Password, new { placeholder = "Enter Your Password", @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Password)
+                            </div>
+                            <div class="mb-20">
+                                <div class="row g-0">
+                                    <div class="col">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="remember_me">
+                                            <label class="form-check-label" for="remember_me">Remember Me</label>
+                                        </div>
+                                    </div>
+                                    <div class="col text-end">
+                                        <a asp-controller="account" asp-action="ForgotPassword" class="forgot-text">Forgot Password?</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <input type="submit" class="btn btn-outline-primary" value="Login" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-6">
+                    <div class="w-300 mx-auto text-center">
+                        <figure class="mb-20">
+                            <img src="~/images/Ginilytics-support.png" alt="Ginilytics Support"/>
+                        </figure>
+                        <p class="m-0">Ginilytics Support provides Dedicated mobility solutions for your business. Small Businesses to Fortune 500 Companies Count on Ginilytics Support.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

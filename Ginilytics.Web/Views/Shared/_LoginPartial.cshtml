@@ -1,0 +1,42 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+@if (SignInManager.IsSignedIn(User))
+{
+    @*<li class="nav-item">
+            <a class="nav-link text-dark" title="Manage">Hello @User.Identity.Name!</a>
+        </li>*@
+    <div class="p-0 text-end">
+        <div class="dropdown profile-frame text-start">
+            <div class="dropdown-toggle d-flex align-items-center" id="profileDropdown" data-toggle="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <figure class="m-0">
+                    <img src="~/images/avtar.png" alt="Ginilytics Support" />
+                </figure>
+                <div class="ps-3 profile-content">
+                    <h2 class="mb-0 $font-size12">@User.Identity.Name</h2>
+                    <p class="mb-0 $font-size12">@User.Identity.Name</p>
+                </div>
+            </div>
+            <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                <li><a class="dropdown-item" href="profile.html">My Profile</a></li>
+                <li><a class="dropdown-item" href="my-task.html">My Task</a></li>
+                <li><a class="dropdown-item" href="events.html">Event/Appointmentse</a></li>
+                <li><a class="dropdown-item" href="settings.html">Setting</a></li>
+                <li><a class="dropdown-item active" asp-controller="account" asp-action="login">Sign Out</a></li>
+            </ul>
+        </div>
+    </div>
+}
+else
+{
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-controller="account" asp-action="Register">Register</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-controller="account" asp-action="login">Login</a>
+    </li>
+
+}
