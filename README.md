@@ -1,5 +1,5 @@
 # GiniLytics Code Base 
-## Overview
+## Overview 
 
 This project is a **.NET Core MVC** application that follows an N-Tier architecture pattern with:
 - **UI Layer**: The Presentation Layer (MVC) for user interaction.
