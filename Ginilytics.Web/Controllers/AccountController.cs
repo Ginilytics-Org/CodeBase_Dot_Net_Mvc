@@ -20,7 +20,7 @@ namespace Ginilytics.Web.Controllers
         {
             this.signInManager = signInManager;
             this._accountService = accountService;
-        }
+        } 
         public IActionResult Index()
         {
             return View();

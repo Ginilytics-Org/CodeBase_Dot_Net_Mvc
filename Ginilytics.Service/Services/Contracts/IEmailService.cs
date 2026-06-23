@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Ginilytics.Service.Services.Contracts
 {
-    public interface IEmailService
+    public interface IEmailService 
     {
     }
 }
